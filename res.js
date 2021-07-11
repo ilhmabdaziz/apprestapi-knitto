@@ -1,6 +1,6 @@
 "use strict";
 
-exports.ok = (values, res) => {
+exports.oke = (values, res) => {
   const data = {
     status: 200,
     values: values,
