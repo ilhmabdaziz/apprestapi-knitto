@@ -6,6 +6,7 @@ const conn = mysql.createConnection({
   user: "root",
   password: "root",
   database: "knitto_restapi",
+  port: "8889",
 });
 
 conn.connect((err) => {
