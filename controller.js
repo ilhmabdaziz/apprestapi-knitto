@@ -50,3 +50,22 @@ exports.addMaterial = (req, res) => {
     }
   );
 };
+
+exports.updateMaterial = (req, res) => {
+  let id = req.body.id;
+  let nama = req.body.nama;
+  let total = req.body.total;
+  let trend = req.body.trend;
+
+  connection.query(
+    "UPDATE materials SET nama=?, total=?, trend=? WHERE id=?",
+    [nama, total, trend, id],
+    (err, rows, field) => {
+      if (err) {
+        console.log(err);
+      } else {
+        response.resultJSON(`success update data ${nama}`, res);
+      }
+    }
+  );
+};

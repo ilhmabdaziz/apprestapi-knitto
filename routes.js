@@ -10,4 +10,6 @@ module.exports = (app) => {
   app.route("/tampil/:id").get(line.getMaterialById);
 
   app.route("/tambah").post(line.addMaterial);
+
+  app.route("/ubah").put(line.updateMaterial);
 };
