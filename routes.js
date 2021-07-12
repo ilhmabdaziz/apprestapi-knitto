@@ -12,4 +12,6 @@ module.exports = (app) => {
   app.route("/tambah").post(line.addMaterial);
 
   app.route("/ubah").put(line.updateMaterial);
+
+  app.route("/hapus").delete(line.deleteMaterial);
 };

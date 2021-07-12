@@ -60,11 +60,27 @@ exports.updateMaterial = (req, res) => {
   connection.query(
     "UPDATE materials SET nama=?, total=?, trend=? WHERE id=?",
     [nama, total, trend, id],
-    (err, rows, field) => {
+    (err, rows, fields) => {
       if (err) {
         console.log(err);
       } else {
         response.resultJSON(`success update data ${nama}`, res);
+      }
+    }
+  );
+};
+
+exports.deleteMaterial = (req, res) => {
+  let id = req.body.id;
+
+  connection.query(
+    "DELETE FROM materials WHERE id=?",
+    [id],
+    (err, rows, fields) => {
+      if (err) {
+        console.log(err);
+      } else {
+        response.resultJSON(`success delete id ${id}`, res);
       }
     }
   );
