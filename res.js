@@ -1,6 +1,6 @@
 "use strict";
 
-exports.oke = (values, res) => {
+exports.resultJSON = (values, res) => {
   const data = {
     status: 200,
     values: values,
