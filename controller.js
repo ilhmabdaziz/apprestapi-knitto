@@ -21,13 +21,31 @@ exports.getMaterialById = (req, res) => {
   // res.send(req.params.id);
   let id = req.params.id;
   connection.query(
-    "SELECT * FROM materials WHERE id_bahan = ?",
+    "SELECT * FROM materials WHERE id = ?",
     [id],
     (err, rows, field) => {
       if (err) {
         console.log(err);
       } else {
         response.resultJSON(rows, res);
+      }
+    }
+  );
+};
+
+exports.addMaterial = (req, res) => {
+  let nama = req.body.nama;
+  let total = req.body.total;
+  let trend = req.body.trend;
+
+  connection.query(
+    "INSERT INTO materials (nama,total,trend) VALUES (?,?,?)",
+    [nama, total, trend],
+    (err, rows, fields) => {
+      if (err) {
+        console.log(err);
+      } else {
+        response.resultJSON(`success added data ${nama}`, res);
       }
     }
   );

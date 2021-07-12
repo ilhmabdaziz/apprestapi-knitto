@@ -8,4 +8,6 @@ module.exports = (app) => {
   app.route("/tampil").get(line.getMaterial);
 
   app.route("/tampil/:id").get(line.getMaterialById);
+
+  app.route("/tambah").post(line.addMaterial);
 };
