@@ -4,7 +4,7 @@ const connection = require("./koneksi");
 const response = require("./res");
 
 exports.index = (req, res) => {
-  response.resultJSON("APP REST API berjalan!!!", res);
+  response.resultJSON("apprestapi is running!!!", res);
 };
 
 exports.getMaterial = (req, res) => {
